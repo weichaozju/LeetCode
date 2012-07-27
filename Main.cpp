@@ -3,34 +3,25 @@
 #include <iostream>
 #include <string>
 #include <cmath>
-#include "Rotate_List.cpp"
+#include "Substring_with_Concatenation_of_All_Words.cpp"
 using namespace std;
+/*
+ ListNode *head, *tail;
 
-ListNode *head, *tail;
-
-void insert(int x) {
-	if (!head) {
-		head = new ListNode(x);
-		tail = head;
-	} else {
-		tail->next = new ListNode(x);
-		tail = tail->next;
-	}
-}
+ void insert(int x) {
+ if (!head) {
+ head = new ListNode(x);
+ tail = head;
+ } else {
+ tail->next = new ListNode(x);
+ tail = tail->next;
+ }
+ }*/
 int main() {
-	Solution s;
-	ListNode *result;
-	head = NULL;
-	tail = NULL;
+	 vector<string> L;
+	 L.push_back("a");
+	 Solution s;
 
-	for (int i = 1; i <= 2; i++) {
-		insert(i);
-	}
-	result = s.rotateRight(head, 13);
-	while (result) {
-		cout << result->val;
-		result = result->next;
-	}
-
+	 s.findSubstring("a", L);
 	return 0;
 }

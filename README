@@ -1,5 +1,7 @@
 Solution set for Leetcode online interview problems. (60/92)
 http://www.leetcode.com/onlinejudge
+My purpose of publishing the solution set is welcoming better ideas and more elegant code
+to solve the problem.
 
 3 Sum: medium
 3 Sum Closest: medium
@@ -70,24 +72,26 @@ Reverse Nodes in k-Group: medium
 Roman to Integer: easy
 Rotate Image: easy
 Rotate List: easy
-Scramble String
-Search a 2D Matrix
-Search for a Range
-Search in Rotated Sorted Array
-Search in Rotated Sorted Array II
-Search Insert Position
-Set Matrix Zeroes
+Scramble String: medium
+Search a 2D Matrix: binary search, easy
+Search for a Range: variant of binary search, easy
+Search in Rotated Sorted Array: variant of binary search, medium
+Search in Rotated Sorted Array II: variant of binary search, easy
+Search Insert Position: variant of binary search, easy
+Set Matrix Zeroes: easy
 
-Simplify Path
-Sort Colors
-Spiral Matrix
-Spiral Matrix II
-Sqrt(x)
-String to Integer (atoi)
-Subsets
-Substring with Concatenation of All Words
-Sudoku Solver
-Swap Nodes in Pairs
+Simplify Path: meidum
+Sort Colors: hard
+Spiral Matrix: easy
+Spiral Matrix II: easy
+Sqrt(x): variant of binary search, medium
+String to Integer (atoi): boring
+Subsets: easy
+***Subsets II: similar as problem Permutations II
+Substring with Concatenation of All Words: medium
+Sudoku Solver: easy dfs
+
+Swap Nodes in Pairs: linked list, easy
 Text Justification
 Trapping Rain Water
 Two Sum
@@ -97,5 +101,6 @@ Valid Number
 Valid Parentheses
 Valid Sudoku
 Wildcard Matching
+
 Word Search
 ZigZag Conversion
