@@ -2,7 +2,7 @@
  Author:     Weixian Zhou, ideazwx@gmail.com
  Date:       Jul 26, 2012
  Problem:    Swap Nodes in Pairs
- Difficulty: 
+ Difficulty: easy
  Source:     http://www.leetcode.com/onlinejudge
  Notes:
  Given a linked list, swap every two adjacent nodes and return its head.
@@ -14,7 +14,7 @@
  in the list, only nodes itself can be changed.
 
  Solution:
- 
+
  */
 #include <vector>
 #include <set>
@@ -42,7 +42,7 @@ public:
 		ListNode *cur = newhead;
 		newhead->next = head;
 
-		while (cur->next != NULL) {
+		while (cur->next != NULL && cur->next->next != NULL) {
 			ListNode *n0 = cur;
 			cur = cur->next;
 			ListNode *n1 = cur;
@@ -52,6 +52,7 @@ public:
 			n0->next = n2;
 			n1->next = n2->next;
 			n2->next = n1;
+			cur = n1;
 		}
 
 		head = newhead->next;

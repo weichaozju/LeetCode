@@ -1,7 +1,8 @@
-Solution set for Leetcode online interview problems. (60/92)
+Solution set for Leetcode online interview problems. (88/92)
 http://www.leetcode.com/onlinejudge
-My purpose of publishing the solution set is welcoming better ideas and more elegant code
-to solve the problem.
+My purpose of publishing the solution set is 
+1) preparing for the technical interviews;
+2) looking forward better ideas and more elegant code to solve the problem.
 
 3 Sum: medium
 3 Sum Closest: medium
@@ -88,19 +89,19 @@ Sqrt(x): variant of binary search, medium
 String to Integer (atoi): boring
 Subsets: easy
 ***Subsets II: similar as problem Permutations II
-Substring with Concatenation of All Words: medium
+Substring with Concatenation of All Words: hash, medium
 Sudoku Solver: easy dfs
 
 Swap Nodes in Pairs: linked list, easy
-Text Justification
-Trapping Rain Water
-Two Sum
-Unique Paths
-Unique Paths II
-Valid Number
-Valid Parentheses
-Valid Sudoku
-Wildcard Matching
+Text Justification: easy
+***Trapping Rain Water: don't understand the problem
+Two Sum: easy hash
+Unique Paths: easy
+Unique Paths II: easy
+Valid Number: boring
+Valid Parentheses: easy
+Valid Sudoku: easy
+Wildcard Matching: same as Regular Expression Matching
 
-Word Search
-ZigZag Conversion
+Word Search: easy dfs
+ZigZag Conversion: easy
