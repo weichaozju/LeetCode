@@ -106,4 +106,8 @@ Wildcard Matching: same as Regular Expression Matching
 Word Search: easy dfs
 ZigZag Conversion: easy
 
+AFTER 10/24/2012 NEW ADDED
 Interleaving String: easy dp
+Convert Sorted List To Binary Search Tree: easy
+Flatten Binary Tree to Linked List: medium
+
