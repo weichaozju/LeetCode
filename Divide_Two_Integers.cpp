@@ -8,7 +8,7 @@ Notes:
 Divide two integers without using multiplication, division and mod operator.
 
 Solution:
-A recursive solution added by ke (mrhuke@gmail.com) in apr. 2013
+A recursive solution added by Ke Hu (mrhuke@gmail.com) in apr. 2013
 */
 #include <vector>
 #include <set>

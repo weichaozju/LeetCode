@@ -80,7 +80,7 @@ public:
     }
 };
 
-// an O(n^2) time, O(1) space solution by ke, Apr. 2013
+// an O(n^2) time, O(1) space solution by Ke Hu (mrhuke@gmail.com), Apr. 2013
 class Solution {
 public:
     vector<vector<int> > threeSum(vector<int> &num) {
@@ -109,7 +109,7 @@ public:
     }
 };
 
-// a less efficient O(n^2) time, O(n) space solution by ke, Apr. 2013
+// a less efficient O(n^2) time, O(n) space solution by Ke Hu (mrhuke@gmail.com), Apr. 2013
 class Solution {
 public:
     vector<vector<int> > threeSum(vector<int> &num) {
