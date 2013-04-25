@@ -79,3 +79,56 @@ public:
         return sol;
     }
 };
+
+// an O(n^2) time, O(1) space solution by ke, Apr. 2013
+class Solution {
+public:
+    vector<vector<int> > threeSum(vector<int> &num) {
+        sort(num.begin(), num.end());
+        
+        vector<vector<int> > res;
+        for ( int i = 0; i < num.size(); ++i){
+            if (i != 0 && num[i] == num[i-1]) continue;
+            for ( int j = i +1, k = num.size()-1; j < k; ){
+                if (num[i] + num[j] + num[k] == 0){
+                    int tmp[] = {num[i], num[j], num[k]};
+                    vector<int> triple = vector<int>(tmp, tmp+3);
+                    res.push_back(triple);
+                    ++j; --k;
+                    while(j < num.size()-1 && num[j] == num[j-1]) ++j;
+                    while(k > 0 && num[k] == num[k+1]) --k;
+                }
+                else if (num[i] + num[j] + num[k] < 0)
+                    ++j;
+                else
+                    --k;
+            }
+        }
+        
+        return res;
+    }
+};
+
+// a less efficient O(n^2) time, O(n) space solution by ke, Apr. 2013
+class Solution {
+public:
+    vector<vector<int> > threeSum(vector<int> &num) {
+        
+        set<vector<int> > res;
+        for ( int i = 0; i < num.size(); ++i){
+            int sum2 = -num[i];
+            set<int> h;
+            for ( int j = i+1; j < num.size(); ++j){
+                if (!h.empty() && h.find(num[j]) != h.end()){
+                    int tmp[] = {num[i], num[j], -num[i]-num[j]};
+                    sort(tmp, tmp+3);
+                    vector<int> triple(tmp, tmp+3);
+                    res.insert(triple);
+                }    
+                h.insert(sum2 - num[j]);
+            }
+        }
+        
+        return vector<vector<int> >(res.begin(), res.end());
+    }
+};
