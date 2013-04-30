@@ -73,3 +73,35 @@ public:
 		return result;
 	}
 };
+
+// The same solution by Ke Hu (mrhuke@gmail.com)
+struct Compare{
+    bool operator()(const Interval &a, const Interval &b)
+    {
+        return a.start < b.start;
+    }
+} compare;
+
+class Solution {
+public:
+    vector<Interval> merge(vector<Interval> &intervals) {
+        vector<Interval> ret;
+        if (intervals.empty()) return ret;
+        
+        sort(intervals.begin(), intervals.end(), compare);
+        
+        Interval cur = intervals[0];
+        for ( int i = 1 ; i < intervals.size(); ++i)        
+        {
+            if (cur.end < intervals[i].start){
+                ret.push_back(cur);
+                cur = intervals[i];
+            }else{
+                cur.start = min(cur.start, intervals[i].start);
+                cur.end = max(cur.end, intervals[i].end);
+            }
+        }
+        ret.push_back(cur);
+        return ret;
+    }
+};
