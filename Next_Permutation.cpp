@@ -77,3 +77,34 @@ public:
 		reverse(num, k + 1, num.size() - 1);
 	}
 };
+
+// Ke Hu (mrhuke@gmail.com)
+class Solution {
+public:
+
+    void swap(vector<int> &num, int i, int j)
+    {
+        int tmp = num[i];
+        num[i] = num[j];
+        num[j] = tmp;
+    }
+    
+    void reverse(vector<int> &num, int i, int j)
+    {
+        for ( int k = i, l = j; k < l; ++k, --l){
+            swap(num, k, l);
+        }
+    }
+
+    void nextPermutation(vector<int> &num) {
+        int k = num.size() - 1;
+        while( k > 0 && num[k-1] >= num[k] )
+            --k;
+        if ( k > 0 ){
+            int j = num.size() - 1;
+            while( j > 0 && num[j] <= num[k-1] ) --j;
+            swap(num, k-1, j);
+        }
+        reverse(num, k, num.size()-1);
+    }
+};

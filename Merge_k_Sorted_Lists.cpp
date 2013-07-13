@@ -68,3 +68,93 @@ public:
 		return head;
 	}
 };
+
+// pairwise merge, Ke Hu (mrhuke@gmail.com)
+class Solution {
+public:
+
+    ListNode *mergeTwoLists(ListNode *a, ListNode *b)
+    {
+        if (!a || !b) return a == NULL ? b : a;
+        if (a->val < b->val){
+            ListNode *merged = mergeTwoLists(a->next, b);
+            a->next = merged;
+            return a;
+        }
+        else{
+            ListNode *merged = mergeTwoLists(a, b->next);
+            b->next = merged;
+            return b;
+        }
+    }
+
+    ListNode *mergeKLists(vector<ListNode *> &lists) {
+        
+        if (lists.empty()) return NULL;
+        int curSize = lists.size();
+        while(curSize > 1){
+            int halfSize = curSize/2;
+            for ( int i = 0; i < halfSize; ++i){
+                ListNode *a = lists[i];
+                ListNode *b = lists[i+halfSize+curSize%2];
+                ListNode *c = mergeTwoLists(a,b);
+                lists[i] = c;
+            }
+            curSize = halfSize + curSize % 2;
+        }
+        return lists[0];
+    }
+};
+
+// a merge-sort like idea, mrhuke@gmail.com, may. 13
+public class Solution {
+    
+    public ListNode mergeTwoLists(ListNode list1, ListNode list2)
+    {
+        if (list1 == null || list2 == null) 
+            return list1 == null ? list2 : list1;
+        
+        ListNode newHead = null, cur = null;
+        while( list1 != null && list2 != null ){
+            if ( list1.val < list2.val ){
+                if (newHead == null){
+                    newHead = cur = list1;
+                }else{
+                    cur.next = list1;
+                    cur = cur.next;
+                }
+                list1 = list1.next;
+            }
+            else{
+                if (newHead == null){
+                    newHead = cur = list2;
+                }else{
+                    cur.next = list2;
+                    cur = cur.next;
+                }
+                list2 = list2.next;
+            }
+        }
+        
+        if (list1 != null)
+            cur.next = list1;
+        if (list2 != null)
+            cur.next = list2;
+        return newHead;
+    }
+    
+    public ListNode mergeLists(ArrayList<ListNode> lists, int i, int j)
+    {
+        if ( i >= j ) return lists.get(i);
+        int mid = (i+j)/2;
+        ListNode list1 = mergeLists(lists, i, mid);
+        ListNode list2 = mergeLists(lists, mid+1, j);
+        ListNode merged = mergeTwoLists(list1, list2);
+        return merged;
+    }
+    
+    public ListNode mergeKLists(ArrayList<ListNode> lists) {
+        if (lists.isEmpty()) return null;
+        return mergeLists(lists, 0, lists.size()-1);
+    }
+}
